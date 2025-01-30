@@ -1,5 +1,5 @@
 fn factorial(num: u64) -> u64 {
-    // TODO: Complete this function to return the factorial of `num` which is
+    // DONE: Complete this function to return the factorial of `num` which is
     // defined as `1 * 2 * 3 * … * num`.
     // https://en.wikipedia.org/wiki/Factorial
     //
@@ -10,6 +10,14 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    // if num == 0 {
+    //     1
+    // } else {
+    //     (1..num).for_each(|x| num *= x);
+    //     num
+    // }
+    // (1..num+1).fold(1, |ans, x| ans * x)
+    (1..num+1).product::<u64>()
 }
 
 fn main() {
